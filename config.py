@@ -9,17 +9,13 @@ class Config(object):
     DEBUG = False
     DEVELOPMENT = False
     TESTING = False
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    SQLALCHEMY_DATABASE_URI = os.environ["DATABASE_URL"]
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class DevelopmentConfig(Config):
-    DEBUG = True,
+    DEBUG = (True,)
     DEVELOPMENT = True
 
 
-config = {
-    'development': DevelopmentConfig,
-
-    'default': DevelopmentConfig
-}
+config = {"development": DevelopmentConfig, "default": DevelopmentConfig}

@@ -5,7 +5,7 @@ from project.apis.recipes.views import api as recipes_ns
 api = Api(
     title="Recipes API",
     version="0.1",
-    description="Register and retrieve random recipes"
+    description="Register and retrieve random recipes",
 )
 
 api.models["BadRequest"] = _bad_request

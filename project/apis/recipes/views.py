@@ -20,8 +20,7 @@ class RecipesList(Resource):
     @api.doc("create_recipe")
     @api.expect(_recipe, validate=True)
     @api.response(code=201, model=_recipe, description="Recipe created")
-    @api.response(code=400, model=_bad_request,
-                  description="Bad create recipe request")
+    @api.response(code=400, model=_bad_request, description="Bad create recipe request")
     def post(self):
         """Create a new recipe"""
         data = request.json

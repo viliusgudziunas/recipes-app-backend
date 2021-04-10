@@ -10,8 +10,7 @@ class RecipeDAO:
         return Recipe.query.filter_by(id=id).first()
 
     def create(self, data):
-        new_recipe = Recipe(name=data.get("name"),
-                            description=data.get("description"))
+        new_recipe = Recipe(name=data.get("name"), description=data.get("description"))
         save_changes(new_recipe)
         return new_recipe
 

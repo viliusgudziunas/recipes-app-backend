@@ -1,13 +1,14 @@
 from flask_restx import Model, fields
 from project.extensions import db
 
-_recipe = Model("Recipe", {
-    "id": fields.Integer,
-    "name": fields.String(required=True,
-                          description="Recipe name",
-                          min_length=1),
-    "description": fields.String(description="Recipe description"),
-})
+_recipe = Model(
+    "Recipe",
+    {
+        "id": fields.Integer,
+        "name": fields.String(required=True, description="Recipe name", min_length=1),
+        "description": fields.String(description="Recipe description"),
+    },
+)
 
 
 class Recipe(db.Model):
@@ -19,8 +20,4 @@ class Recipe(db.Model):
 
     @property
     def json(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "description": self.description
-        }
+        return {"id": self.id, "name": self.name, "description": self.description}
