@@ -1,7 +1,7 @@
 from flask_restx import Model, fields
 from project.extensions import db
 
-recipe = Model("Recipe", {
+_recipe = Model("Recipe", {
     "id": fields.Integer,
     "name": fields.String(required=True,
                           description="Recipe name",
